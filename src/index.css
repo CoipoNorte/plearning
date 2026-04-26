@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-nest-red: #ea2845;
+  --color-nest-red-light: #ff4d6a;
+  --color-nest-red-dark: #c41e3a;
+  --color-nest-pink: #ff6b9d;
+  --color-nest-dark: #0a0a0a;
+  --color-nest-surface: #111111;
+  --color-nest-card: #1a1a1a;
+  --color-nest-border: #2a2a2a;
+  --color-nest-hover: #222222;
+  --color-nest-white: #fafafa;
+  --color-nest-gray: #888888;
+  --color-nest-gray-dark: #555555;
+  --color-nest-muted: #444444;
+  --color-nest-cyan: #00d4ff;
+  --color-nest-green: #00ff88;
+  --color-nest-yellow: #ffd600;
+  --color-nest-purple: #b388ff;
+  --color-nest-orange: #ff9100;
+  --color-nest-blue: #448aff;
+
+  --color-deploy-green: #00ff88;
+  --color-cicd-blue: #448aff;
+  --color-nginx-green: #009639;
+  --color-linux-yellow: #ffd600;
+
+  --animate-fade-in: fadeIn 0.5s ease-out;
+  --animate-slide-up: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-glow-red: glowRed 3s ease-in-out infinite;
+  --animate-float: floatAnim 6s ease-in-out infinite;
+  --animate-pulse-slow: pulseSlow 4s ease-in-out infinite;
+  --animate-gradient: gradientShift 8s ease infinite;
+  --animate-spin-slow: spin 20s linear infinite;
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes glowRed {
+    0%, 100% { box-shadow: 0 0 20px rgba(234, 40, 69, 0.15); }
+    50% { box-shadow: 0 0 40px rgba(234, 40, 69, 0.3), 0 0 80px rgba(234, 40, 69, 0.1); }
+  }
+  @keyframes floatAnim {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(1deg); }
+    66% { transform: translateY(-5px) rotate(-1deg); }
+  }
+  @keyframes pulseSlow {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+  }
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-nest-dark);
+  color: var(--color-nest-white);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--color-nest-dark); }
+::-webkit-scrollbar-thumb { background: var(--color-nest-red); border-radius: 4px; }
+::selection { background: rgba(234, 40, 69, 0.4); color: white; }
+
+@utility nest-card {
+  background: var(--color-nest-card);
+  border: 1px solid var(--color-nest-border);
+  border-radius: 16px;
+}
+
+@utility nest-glow {
+  box-shadow: 0 0 30px rgba(234, 40, 69, 0.1), 0 0 60px rgba(234, 40, 69, 0.05);
+}
+
+@utility gradient-text-nest {
+  background: linear-gradient(135deg, #ea2845, #ff6b9d, #00d4ff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientShift 4s ease infinite;
+}
+
+@utility font-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+@utility glass-dark {
+  background: rgba(26, 26, 26, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
