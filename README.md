@@ -1,4 +1,4 @@
-# 🚀 plearning
+# 🚀 [plearning](https://coiponorte.github.io/plearning/)
 
 Guía interactiva estilo NestJS con animaciones para aprender Deploy, CI/CD, Nginx y Linux. Framer Motion, sidebar colapsable y código copiable.
 
